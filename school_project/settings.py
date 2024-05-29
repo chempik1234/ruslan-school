@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,6 +51,8 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUD_API_KEY"),
     "API_SECRET": os.getenv("CLOUD_API_SECRET"),
 }
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -151,8 +154,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = "/src/ruslan_school/static" # os.path.join(BASE_DIR, 'staticfiles')  # '/static'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = "/src/ruslan_school/static"  # '/static'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles'),  # os.path.join(BASE_DIR, 'static'),
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static")
 # ]

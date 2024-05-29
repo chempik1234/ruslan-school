@@ -8,6 +8,8 @@
       <h4 class="card-title">{{post.title}}</h4>
     </a>
     <p class="card-text pic pic-date">{{ post.created_at|date:"d.m.Y" }} {{ post.created_at|time:"H:i" }}</p>
-    <!--<a href="{% url 'main_pages:news_by_id' latest_news.pk %}" class="btn btn-3">Подробнее</a>-->
+    {% if use_carousel and post.pk %}
+    <a href="{% url 'main_pages:news_by_id' post.pk %}" class="btn btn-3">Подробнее</a>
+    {% endif %}
   </div>
 </div>
