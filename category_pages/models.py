@@ -15,6 +15,7 @@ class Category(models.Model):
             return self.title
 
     class Meta:
+        db_table = "ruslan_school_category"
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
 
@@ -37,6 +38,9 @@ class Content(models.Model):
     text = models.TextField(null=True, blank=True, verbose_name="Текст")
     image = models.ImageField(upload_to="content_images/", null=True, blank=True, verbose_name="Изображение")
     order = models.IntegerField(null=False, blank=False, default=0)
+
+    class Meta:
+        db_table = "ruslan_school_content"
 
     def file_size(self):
         if self.file:

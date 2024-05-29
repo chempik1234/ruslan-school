@@ -11,6 +11,7 @@ class News(models.Model):
         return "Новость " + str(self.created_at) + " " + self.title
 
     class Meta:
+        db_table = "ruslan_school_news"
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
 
@@ -24,6 +25,7 @@ class NewsImage(models.Model):
         return "Картинка к новости >> (" + str(self.news) + ")"
 
     class Meta:
+        db_table = "ruslan_school_news_image"
         verbose_name = "Картинка к нвости"
         verbose_name_plural = "Картинки к новостям"
 
@@ -36,5 +38,6 @@ class SliderImage(models.Model):
         return 'Картинка на главную <img src="' + self.image.url + '" width="50px"/>'
 
     class Meta:
+        db_table = "ruslan_school_slider_image"
         verbose_name = "Картинка на главную"
         verbose_name_plural = "Картинки на главную"
