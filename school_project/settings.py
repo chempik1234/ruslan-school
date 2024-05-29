@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!x)1y#&q-#d#!droz79w!w6^to-m68z+de+qawf72n(+2q(6yv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [".vercel.app", '.now.sh', '127.0.0.1', 'localhost']
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'main_pages',
     'django.forms',
     'ckeditor',
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUD_API_KEY"),
+    "API_SECRET": os.getenv("CLOUD_API_SECRET"),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,17 +90,27 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'school_project.wsgi.application'
+WSGI_APPLICATION = 'school_project.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': os.getenv("POSTGRES_DATABASE"),
+       'USER': os.getenv("POSTGRES_USER"),
+       'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
+       'HOST': os.getenv("POSTGRES_HOST"),
+       'PORT': '5432',
+   }
 }
 
 
@@ -134,11 +151,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = '/static'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = "/src/ruslan_school/static" # os.path.join(BASE_DIR, 'staticfiles')  # '/static'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
+MEDIA_ROOT = "/src/ruslan_school/media"  # os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
