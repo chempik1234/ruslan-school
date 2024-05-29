@@ -1,0 +1,12 @@
+{% for category in categories %}
+{% if category.children.exists %}
+<div class="nav-item dropdown mt-2 mt-sm-0">
+  <a class="nav-link nav-btn dropdown-toggle font-weight-normal active btn-2 my-btn" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{category.title}}</a>
+  <div class="dropdown-menu bg-2">
+      {% include 'category_pages/tabs.html' with categories=category.children.all %}
+  </div>
+</div>
+{% else %}
+<a class="nav-item nav-btn nav-link active btn-2 font-weight-normal my-btn mt-2 mt-sm-0" href="{% url 'category_pages:category' category.pk %}">{{category.title}}</a>
+{% endif %}
+{% endfor %}

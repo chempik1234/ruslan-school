@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mt-5">
+    <div class="col-4 d-none d-sm-block border border-right mr-2">
+        {% include 'category_pages/side_pictures.html' %}
+    </div>
+    <div class="col">
+        {% for content in content_list %}
+        {% if content.text %}
+        <p class="text-justify">{{content.text}}</p>
+        {% endif %}
+        {% if content.image %}
+        <img src="{{content.image.url}}" class="content-image"/>
+        {% endif %}
+        {% if content.file %}
+        <a class="pic pic-download" href="{{content.file.url}}">СКАЧАТЬ: {{content.file.name}} {{content.file_size}}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

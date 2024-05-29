@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row align-content-center">
+    <div class="col">
+        {% include 'main_pages/carousel.html' with images=slider_images %}
+    </div>
+</div>
+<div class="row mt-3 d-block d-sm-flex">
+    <div class="col-sm-5">
+        <h4 class="underlined-1 mb-3">Главное</h4>
+        {% include 'main_pages/post_card.html' with post=latest_news use_carousel=True %}
+    </div>
+    <div class="col mt-4 mt-sm-0">
+        <h4 class="underlined-1 mb-3">Новости</h4>
+        <div class="cards-container">
+            {% for post in news %}
+        {% include 'main_pages/post_card.html' with post=post use_carousel=False %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-3 d-none d-sm-block ml-2">
+        {% include 'category_pages/side_pictures.html' %}
+    </div>
+</div>
+{% endblock %}

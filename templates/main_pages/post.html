@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h2>{{post.title}}</h2>
+        <div class="row d-block d-sm-flex">
+            <div class="col-sm-4 col">
+        {% include 'main_pages/carousel.html' with images=post.images.all %}
+            </div>
+            <div class="col">
+        {{post.text|safe}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

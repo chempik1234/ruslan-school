@@ -1,0 +1,13 @@
+<div class="card">
+    {% if use_carousel %}
+  {% include 'main_pages/carousel.html' with images=post.images.all href=post.pk %}
+    {% endif %}
+
+  <div class="card-body">
+    <a {% if post.pk %}href="{% url 'main_pages:news_by_id' post.pk %}"{% endif %} class="text-decoration-none text-dark">
+      <h4 class="card-title">{{post.title}}</h4>
+    </a>
+    <p class="card-text pic pic-date">{{ post.created_at|date:"d.m.Y" }} {{ post.created_at|time:"H:i" }}</p>
+    <!--<a href="{% url 'main_pages:news_by_id' latest_news.pk %}" class="btn btn-3">Подробнее</a>-->
+  </div>
+</div>

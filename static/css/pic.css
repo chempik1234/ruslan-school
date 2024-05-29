@@ -1,0 +1,32 @@
+.pic>p{
+    font-size: 22px;
+}
+.pic p{
+    margin-bottom: 0;
+}
+.pic {
+    /* display: inline-flex; */
+    text-decoration: none;
+}
+.pic::before {
+    display: inline-block;
+    width: 30px;
+    margin: auto 5px auto 0px;
+    vertical-align: middle;
+}
+
+.pic-address::before {
+    content: url('/static/img/address.png');
+}
+.pic-phone::before {
+    content: url('/static/img/phone.png');
+}
+.pic-email::before {
+    content: url('/static/img/email.png');
+}
+.pic-download::before {
+    content: url('/static/img/download.png');
+}
+.pic-date::before {
+    content: url('/static/img/date.png');
+}
