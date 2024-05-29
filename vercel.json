@@ -13,7 +13,7 @@
             "src": "build.sh",
             "use":"@vercel/static-build",
             "config":{
-                "distDir": "ruslan_school/staticfiles_build"
+                "distDir": "ruslan_school/static"
             }
         }
     ],
