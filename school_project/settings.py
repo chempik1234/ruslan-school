@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = "django-insecure-!x)1y#&q-#d#!droz79w!w6^to-m68z+de+qawf72n(+2q(6yv"  # os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [".vercel.app", '.now.sh', '127.0.0.1', 'localhost']
 
@@ -108,10 +108,10 @@ WSGI_APPLICATION = 'school_project.wsgi.app'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': os.getenv("POSTGRES_DATABASE"),
-       'USER': os.getenv("POSTGRES_USER"),
-       'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
-       'HOST': os.getenv("POSTGRES_HOST"),
+       'NAME': "verceldb",  # os.getenv("POSTGRES_DATABASE"),
+       'USER': "default",  # os.getenv("POSTGRES_USER"),
+       'PASSWORD': "OT7mKNIi9vry",  # os.getenv("POSTGRES_PASSWORD"),
+       'HOST': "ep-fragrant-wind-a206ykdv-pooler.eu-central-1.aws.neon.tech",  # os.getenv("POSTGRES_HOST"),
        'PORT': '5432',
    }
 }
@@ -154,7 +154,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # '/static'
+STATIC_ROOT = "/src/ruslan_school/static"  # os.path.join(BASE_DIR, 'static')  # '/static'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles'),  # os.path.join(BASE_DIR, 'static'),
 print(STATIC_ROOT)
 print(STATICFILES_DIRS)
