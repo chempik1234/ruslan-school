@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [".vercel.app", '.now.sh', '127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',
     'authentication',
     'category_pages',
     'main_pages',
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
 ]
 
 CLOUDINARY_STORAGE = {
@@ -154,8 +154,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = "/src/ruslan_school/static"  # '/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # '/static'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles'),  # os.path.join(BASE_DIR, 'static'),
+print(STATIC_ROOT)
+print(STATICFILES_DIRS)
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static")
 # ]
