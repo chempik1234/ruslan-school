@@ -1,3 +1,4 @@
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
 from django.core.validators import MinValueValidator
 from django.db import models
 
@@ -34,7 +35,8 @@ def convert_file_size(bytes_size):
 class Content(models.Model):
     parent_category = models.ForeignKey('Category', null=False, blank=False, related_name="contents",
                                         verbose_name="Родительская категория", on_delete=models.CASCADE)
-    file = models.FileField(verbose_name="Файл", null=True, blank=True, upload_to="files/")
+    file = models.FileField(verbose_name="Файл", null=True, blank=True, upload_to="files/",
+                            storage=RawMediaCloudinaryStorage())
     text = models.TextField(null=True, blank=True, verbose_name="Текст")
     image = models.ImageField(upload_to="content_images/", null=True, blank=True, verbose_name="Изображение")
     order = models.IntegerField(null=False, blank=False, default=0)

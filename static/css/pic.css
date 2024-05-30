@@ -5,7 +5,7 @@
     margin-bottom: 0;
 }
 .pic {
-    /* display: inline-flex; */
+    display: inline-flex;
     text-decoration: none;
 }
 .pic::before {
