@@ -1,0 +1,20 @@
+.cards-container {
+    width: 100%;
+    display: inline-block;
+}
+@media screen and (min-width: 576px){
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+		gap: 10px;
+    }
+    .mw-sm-500px {
+        max-width: 500px;
+    }
+    .mh-sm-300px {
+        max-height: 300px;
+    }
+}
+header {
+    display: inline;
+}
