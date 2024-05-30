@@ -111,7 +111,12 @@
             <p>{{company_email}}</p>
           </div>
           <div class="col">
-              <p class="font-weight-light text-left">Интернет-магазин <span class="font-italic">techniqueffa</span></p>
+            <h5 class="font-weight-bold">Меню</h5>
+              <div class="d-inline-flex flex-wrap flex-column">
+              {% for tab in footer_tabs %}
+              <a class="text-dark mr-3 mt-1" href="{% url 'category_pages:category' tab.pk %}">{{tab.title}}</a>
+              {% endfor %}
+              </div>
           </div>
         </div>
       </div>
