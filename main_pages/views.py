@@ -13,8 +13,8 @@ def main_page(request):
 
 def news_page(request):
     news = News.objects.all().order_by("-created_at")
-    return render(request, "main_pages/main_page.html",
-                  context={'news': news})
+    return render(request, "main_pages/news_page.html",
+                  context={'news': news, "title_header": "Новости"})
 
 
 def news_details_page(request, news_pk: int):

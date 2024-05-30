@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row d-block d-sm-flex">
+    <div class="col cards-container">
+{% for post in news %}
+        {% include 'main_pages/post_card.html' with post=post use_carousel=True %}
+{% endfor %}
+    </div>
+    <div class="col-4 mt-4 mt-sm-0">
+        {% include 'category_pages/side_pictures.html' %}
+    </div>
+</div>
+{% endblock %}

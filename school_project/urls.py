@@ -24,11 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication.urls', namespace='authentication')),
     path('', include('category_pages.urls', namespace='categories')),
-    path('', include('main_pages.urls', namespace='main_pages')),
+    path('', include('main_pages.urls', namespace='main_pages   ')),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+handler404 = "category_pages.views.handler404"
+
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 print('Urls.py MEDIA_ROOT: %s' % settings.MEDIA_ROOT)
 print('Urls.py STATIC_ROOT: %s' % settings.STATIC_ROOT)
