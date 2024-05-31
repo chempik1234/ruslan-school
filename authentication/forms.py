@@ -69,3 +69,7 @@ class PasswordResetForm(forms.Form):
 class EmailForm(forms.Form):
     email = forms.EmailField(label='Почта', required=True,
                              max_length=100, widget=forms.EmailInput(attrs={'class': 'form-control'}))
+
+
+class AvatarForm(forms.Form):
+    avatar = forms.ImageField(required=True)

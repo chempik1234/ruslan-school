@@ -1,9 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <form action="{% url 'authentication:email_reset' %}" method="post">
+<div class="row d-sm-flex d-block">
+    <div class="col-sm-2 col d-flex flex-column justify-content-center">
+        <img src="{% if user.avatar_image %}{{user.avatar_image.url}}{% else %}{% static 'img/placeholder_avatar.png' %}{% endif %}" class="avatar-image"/>
+
+        <button type="button" class="btn btn-3" data-toggle="modal" data-target="#profileModalCentered">Изменить фото</button>
+        <div class="modal" id="profileModalCentered" tabindex="-1" role="dialog" aria-labelledby="profileModalCenteredLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered mw-md-75" role="document">
+            <div class="modal-content">
+              <div class="p-2">
+                  <form method="post" action="{% url 'authentication:avatar_reset' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="file" id="id_avatar" name="avatar"/>
+                      <input type="submit" class="btn btn-1" value="Отправить">
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <form action="{% url 'authentication:email_reset' %}" class="col" method="post">
         {% csrf_token %}
-<div class="d-flex">
         <div class="mx-auto my-3 py-2 w-md-75">
+            <h3>{{user.get_short_name}}</h3>
+            <div class="form-group row mt-2 mt-sm-0">
+              <label for="firstNameDisplay" class="col-sm-2 col-form-label">Имя</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstNameDisplay" readonly placeholder="Имя" value="{{user.first_name}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="lastNameDisplay" class="col-sm-2 col-form-label">Фамилия</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastNameDisplay" readonly placeholder="Фамилия" value="{{user.last_name}}">
+              </div>
+            </div>
             <div class="form-group row">
                     <label for="id_email" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
@@ -23,6 +55,8 @@
                         <input type="submit" class="btn btn-outline-1 ml-2" value="Сменить Email"/>
                   </div>
               </div>
+            </div>
+                </div>
             </div>
         </div>
 </div>

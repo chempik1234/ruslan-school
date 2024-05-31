@@ -56,6 +56,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    avatar_image = models.ImageField(null=True, blank=True, verbose_name="Аватар", upload_to="avatar_images/")
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'password', 'is_staff']
@@ -75,7 +76,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_full_name(self):
         """ Default method that returns only username instead of using name and surname. """
-        return self.email
+        return self.first_name + " " + self.last_name
 
     def get_short_name(self):
         """ Default method that returns only username instead of using name and surname. """

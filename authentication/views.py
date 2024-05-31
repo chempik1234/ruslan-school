@@ -7,7 +7,7 @@ from django.views.decorators.http import require_POST
 from rest_framework.views import APIView
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
-from .forms import SignInForm, SignUpForm, EmailForm
+from .forms import SignInForm, SignUpForm, EmailForm, AvatarForm
 from .models import User
 
 
@@ -83,4 +83,18 @@ def email_reset_view(request):
         messages.success(request, "Успешно сброшена почта!")
     else:
         messages.error(request, "В почте ошибка, не сброшено!")
+    return redirect('authentication:profile')
+
+
+@login_required
+@require_POST
+def avatar_reset_view(request):
+    form = AvatarForm(request.POST, request.FILES)
+    if form.is_valid():
+        new_avatar = form.cleaned_data['avatar']
+        request.user.avatar_image = new_avatar
+        request.user.save()
+        messages.success(request, "Успешно сброшен аватар!")
+    else:
+        messages.error(request, "В аватарке ошибка, не сброшено!")
     return redirect('authentication:profile')

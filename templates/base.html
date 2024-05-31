@@ -65,7 +65,7 @@
                 </a>
             </div>
         </div>
-      <nav class="navbar-expand-md navbar-light navbar w-md-75 mx-auto bg-2 sticky-top" id="main-nav">
+      <nav class="navbar-expand-md navbar-light navbar mx-auto bg-2 sticky-top" id="main-nav">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -112,10 +112,14 @@
           </div>
           <div class="col">
             <h5 class="font-weight-bold">Меню</h5>
-              <div class="d-inline-flex flex-wrap flex-column">
-              {% for tab in footer_tabs %}
-              <a class="text-dark mr-3 mt-1" href="{% url 'category_pages:category' tab.pk %}">{{tab.title}}</a>
-              {% endfor %}
+              <div class="row border-between-horizontal ml-0">
+                  {% for tab_group in footer_tabs_groups %}
+                    <div class="d-inline-flex flex-wrap flex-column">
+                    {% for tab in tab_group %}
+                    <a class="text-dark mr-3 mt-1" href="{% url 'category_pages:category' tab.pk %}">{{tab.title}}</a>
+                    {% endfor %}
+                    </div>
+                  {% endfor %}
               </div>
           </div>
         </div>

@@ -4,8 +4,12 @@
 .content-image {
     max-width: 100%;
 }
+.avatar-image {}
 @media screen and (min-width: 576px){
     .content-image {
         max-width: 500px;
+    }
+    .avatar-image {
+        max-width: 200px;
     }
 }

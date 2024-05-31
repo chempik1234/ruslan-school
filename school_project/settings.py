@@ -68,9 +68,17 @@ ROOT_URLCONF = 'school_project.urls'
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Basic',
-    },
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
+             'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
 }
+
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")

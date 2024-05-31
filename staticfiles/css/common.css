@@ -11,6 +11,16 @@
     border-right: none!important;
     border-bottom: none!important;
 }
+@media screen and (min-width:576px){
+    .border-between-horizontal div:not(:last-child)
+    {
+        border-right: 1px solid #CCCCCC;
+    }
+    .border-between-horizontal div:not(:first-child)
+    {
+        padding-left: 10px;
+    }
+}
 .container {
     max-width: 1400px!important;
 }
