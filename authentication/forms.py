@@ -29,6 +29,10 @@ class SignInForm(forms.Form):
 class SignUpForm(forms.Form):
     email = forms.EmailField(label='Почта', required=True,
                              max_length=100, widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    first_name = forms.EmailField(label='Имя', required=True,
+                                  max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    last_name = forms.EmailField(label='Фамилия', required=True,
+                                 max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label='Пароль', required=True,
                                max_length=128, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     # remember_me = forms.BooleanField(label='Запомнить меня', required=False)
@@ -50,6 +54,8 @@ class SignUpForm(forms.Form):
         data = self.cleaned_data
         new_user = User()
         new_user.email = data.get('email')
+        new_user.first_name = data.get('first_name')
+        new_user.last_name = data.get('last_name')
         new_user.set_password(data.get('password'))
         new_user.save()
         return new_user
