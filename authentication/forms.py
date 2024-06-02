@@ -29,9 +29,9 @@ class SignInForm(forms.Form):
 class SignUpForm(forms.Form):
     email = forms.EmailField(label='Почта', required=True,
                              max_length=100, widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    first_name = forms.EmailField(label='Имя', required=True,
+    first_name = forms.CharField(label='Имя', required=True,
                                   max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.EmailField(label='Фамилия', required=True,
+    last_name = forms.CharField(label='Фамилия', required=True,
                                  max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label='Пароль', required=True,
                                max_length=128, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
