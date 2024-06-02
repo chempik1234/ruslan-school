@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication.urls', namespace='authentication')),
     path('', include('category_pages.urls', namespace='categories')),
-    path('', include('main_pages.urls', namespace='main_pages   ')),
+    path('', include('main_pages.urls', namespace='main_pages')),
+    path('', include('feedback.urls', namespace='feedback')),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]

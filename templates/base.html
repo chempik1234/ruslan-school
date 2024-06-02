@@ -35,7 +35,7 @@
       window.addEventListener('load', footerf);
       window.addEventListener('resize', footerf);
     </script>-->
-    <title>{{title}}</title>
+    <title>{% if title %}{{title}}{% else %}Школа №0{% endif %}</title>
   </head>
   <body>
     {% if messages %}
@@ -65,15 +65,21 @@
                 </a>
             </div>
         </div>
-      <nav class="navbar-expand-md navbar-light navbar mx-auto bg-2 sticky-top" id="main-nav">
+      <nav class="navbar navbar-expand-md navbar-light navbar mx-auto bg-2 sticky-top" id="main-nav">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
-          <div class="navbar-nav mr-auto mr-sm-0">
+          <div class="flex-wrap navbar-nav mr-auto mr-sm-0">
               <a class="nav-item nav-link nav-btn active btn-2 my-btn mt-2 mt-sm-0" href="{% url 'main_pages:main_page' %}">Главная</a>
               <a class="nav-item nav-link nav-btn active btn-2 my-btn mt-2 mt-sm-0" href="{% url 'main_pages:news_page' %}">Новости</a>
               <a class="nav-item nav-link nav-btn active btn-2 my-btn mt-2 mt-sm-0" href="{% url 'authentication:profile' %}">Профиль</a>
+              <a class="nav-item nav-link nav-btn active btn-2 my-btn mt-2 mt-sm-0" href="{% url 'feedback:my_tickets' %}">Мои запросы</a>
+              {% if user.is_authenticated %}
+              {% if user.is_staff %}
+              <a class="nav-item nav-btn my-btn btn-3 rounded mt-2 mt-sm-0" href="{% url 'feedback:feedback_page' %}">Обратная связь</a>
+              {% endif %}
+              {% endif %}
               {% include 'category_pages/tabs.html' with categories=categories %}
             {% if user.is_authenticated %}
             <form action="{% url 'authentication:sign_out' %}" method="post" class="mr-auto my-auto">
@@ -111,7 +117,7 @@
             <p>{{company_email}}</p>
           </div>
           <div class="col">
-            <h5 class="font-weight-bold">Меню</h5>
+            <!--<h5 class="font-weight-bold">Меню</h5>
               <div class="row border-between-horizontal ml-0">
                   {% for tab_group in footer_tabs_groups %}
                     <div class="d-inline-flex flex-wrap flex-column">
@@ -120,6 +126,15 @@
                     {% endfor %}
                     </div>
                   {% endfor %}
+              </div>-->
+              <h5 class="font-weight-bold">Обратная связь</h5>
+              <div class="border p-4 rounded">
+                  <form method="post" action="{% url 'feedback:upload_feedback' %}">
+                      {% csrf_token %}
+                      {{ ticket_form.media }}
+                      {{ ticket_form.as_p }}
+                      <input type="submit" class="btn btn-3"/>
+                  </form>
               </div>
           </div>
         </div>

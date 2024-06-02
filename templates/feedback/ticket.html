@@ -1,0 +1,27 @@
+<div class="card">
+    {% if ticket.closed %}
+    <div class="alert-success card-img-top">
+        &#9989;<strong>Вопрос закрыт!</strong>
+    </div>
+    {% else %}
+    <div class="alert-info">
+        <strong>Вопрос ещё открыт!</strong>
+    </div>
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ticket.title}}</h5>
+        <p class="card-text pic pic-date">{{ ticket.date|date:"d.m.Y" }} {{ ticket.date|time:"H:i" }}</p>
+        <p class="text-secondary card-text">{{ticket.email}}</p>
+        {{ticket.content}}
+    </div>
+    {% if ticket.user == user or user.is_authenticated and user.is_staff %}
+    <form action="{% url 'feedback:toggle' ticket.pk %}" class="card-img-bottom" method="post">
+        {% csrf_token %}
+        {% if ticket.closed %}
+        <input type="submit" class="btn btn-danger w-100" value="Открыть вопрос"/>
+        {% else %}
+        <input type="submit" class="btn btn-3 w-100" value="Закрыть вопрос"/>
+        {% endif %}
+    </form>
+    {% endif %}
+</div>

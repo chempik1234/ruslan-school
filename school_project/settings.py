@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'authentication',
     'category_pages',
     'main_pages',
+    'feedback',
     'django.forms',
     'ckeditor',
     'cloudinary_storage',
@@ -76,6 +77,9 @@ CKEDITOR_CONFIGS = {
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source']
         ]
+    },
+    'basic': {
+        'toolbar': 'Basic'
     }
 }
 
@@ -95,7 +99,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category_pages.context_processors.default_context',
-                'main_pages.context_processors.default_context'
+                'main_pages.context_processors.default_context',
+                'feedback.context_processors.default_context'
             ],
         },
     },

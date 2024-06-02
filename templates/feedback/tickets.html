@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="cards-container">
+{% for ticket in tickets %}
+{% include 'feedback/ticket.html' with ticket=ticket %}
+{% endfor %}
+</div>
+{% endblock %}
