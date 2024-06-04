@@ -117,7 +117,22 @@
             <p>{{company_email}}</p>
           </div>
           <div class="col">
-            <!--<h5 class="font-weight-bold">Меню</h5>
+              {% if user.is_authenticated %}
+              <h5 class="font-weight-bold">Обратная связь</h5>
+              <div class="border p-4 rounded">
+                  <form method="post" action="{% url 'feedback:upload_feedback' %}">
+                      {% csrf_token %}
+                      {{ ticket_form.media }}
+                      {{ ticket_form.as_p }}
+                      <input type="submit" class="btn btn-3"/>
+                      <script>
+                          const feedbackEmailField = document.GetElementById('id_email');
+                          feedbackEmailField.value = '{user.email}}';
+                      </script>
+                  </form>
+              </div>
+              {% else %}
+              <h5 class="font-weight-bold">Меню</h5>
               <div class="row border-between-horizontal ml-0">
                   {% for tab_group in footer_tabs_groups %}
                     <div class="d-inline-flex flex-wrap flex-column">
@@ -126,16 +141,8 @@
                     {% endfor %}
                     </div>
                   {% endfor %}
-              </div>-->
-              <h5 class="font-weight-bold">Обратная связь</h5>
-              <div class="border p-4 rounded">
-                  <form method="post" action="{% url 'feedback:upload_feedback' %}">
-                      {% csrf_token %}
-                      {{ ticket_form.media }}
-                      {{ ticket_form.as_p }}
-                      <input type="submit" class="btn btn-3"/>
-                  </form>
               </div>
+              {% endif %}
           </div>
         </div>
       </div>
