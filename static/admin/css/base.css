@@ -5,9 +5,9 @@
 /* VARIABLE DEFINITIONS */
 html[data-theme="light"],
 :root {
-    --primary: #79aec8;
-    --secondary: #417690;
-    --accent: #f5dd5d;
+    --primary: #000;
+    --secondary: #6c6;
+    --accent: #333;
     --primary-fg: #fff;
 
     --body-fg: #333;
@@ -15,7 +15,7 @@ html[data-theme="light"],
     --body-quiet-color: #666;
     --body-loud-color: #000;
 
-    --header-color: #ffc;
+    --header-color: #555;
     --header-branding-color: var(--accent);
     --header-bg: var(--secondary);
     --header-link-color: var(--primary-fg);
@@ -46,7 +46,7 @@ html[data-theme="light"],
     --button-hover-bg: #205067;
     --default-button-bg: #205067;
     --default-button-hover-bg: var(--secondary);
-    --close-button-bg: #747474;
+    --close-button-bg: #ff8800;
     --close-button-hover-bg: #333;
     --delete-button-bg: #ba2121;
     --delete-button-hover-bg: #a41515;
@@ -102,7 +102,7 @@ body {
 /* LINKS */
 
 a:link, a:visited {
-    color: var(--link-fg);
+    /* color: var(--link-fg); */
     text-decoration: none;
     transition: color 0.15s, background 0.15s;
 }
@@ -757,7 +757,7 @@ a.deletelink:focus, a.deletelink:hover {
     padding-left: 0;
     float: right;
     position: relative;
-    margin-top: -48px;
+    /* margin-top: 0; */
 }
 
 .object-tools li {
@@ -768,18 +768,17 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 .object-tools a {
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .object-tools a:link, .object-tools a:visited {
     display: block;
     float: left;
-    padding: 3px 12px;
+    padding: 10px 22px;
     background: var(--object-tools-bg);
     color: var(--object-tools-fg);
     font-weight: 400;
-    font-size: 0.6875rem;
-    text-transform: uppercase;
+    font-size: 1rem;
     letter-spacing: 0.5px;
 }
 

@@ -1,0 +1,42 @@
+{% load i18n %}
+
+{% if app_list %}
+<div class="cards-container">
+  {% for app in app_list %}
+    <div class="card border-secondary">
+        <div class="card-img-top alert-dark text-white bg-2 p-2">
+          Компонент:
+          <a href="{{ app.app_url }}" class="text-white" title="{% blocktranslate with name=app.name %}Models in the {{ name }} application{% endblocktranslate %}">{{ app.name }}</a>
+        </div>
+      <div class="card-body">
+          {% for model in app.models %}
+            <div class="mt-2">
+            {% if model.admin_url %}
+              <a class="" href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}><h3>{{ model.name }}</h3></a>
+            {% else %}
+              <p scope="row">{{ model.name }}</p>
+            {% endif %}
+
+            {% if model.add_url %}
+              <a class="btn btn-outline-success" href="{{ model.add_url }}" >{% translate 'Add' %}</a>
+            {% else %}
+            {% endif %}
+            {% if model.add_url and model.admin_url and show_changelinks %}
+              /
+              {% endif %}
+            {% if model.admin_url and show_changelinks %}
+              {% if model.view_only %}
+                <a class="" href="{{ model.admin_url }}">{% translate 'View' %}</a>
+              {% else %}
+                <a class="text-danger" href="{{ model.admin_url }}">{% translate 'Change' %}</a>
+              {% endif %}
+            {% elif show_changelinks %}
+            {% endif %}
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>{% translate 'You don’t have permission to view or edit anything.' %}</p>
+{% endif %}

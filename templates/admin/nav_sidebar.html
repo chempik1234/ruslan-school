@@ -1,0 +1,7 @@
+{% load i18n %}
+<nav aria-label="{% translate 'Sidebar' %}" class="py-3">
+  {% include 'admin/app_list.html' with app_list=available_apps show_changelinks=False %}
+  <input type="search" id="nav-filter"
+         placeholder="{% translate 'Start typing to filter…' %}"
+         aria-label="{% translate 'Filter navigation items' %}">
+</nav>
