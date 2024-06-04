@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'category_pages',
     'main_pages',
     'feedback',
+    'custom_admin',
     'django.forms',
     'ckeditor',
     'cloudinary_storage',
@@ -56,6 +57,7 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
+    'custom_admin.middleware.CustomAdminLogMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
