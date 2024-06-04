@@ -30,3 +30,6 @@
 .pic-date::before {
     content: url('/static/img/date.png');
 }
+.pic-eye::before {
+    content: url('/static/img/eye.png');
+}

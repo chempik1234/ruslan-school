@@ -1,71 +1,109 @@
+:root {
+    --color-1: #f80;
+    --color-2: #668;
+    --color-3: #6c6;
+    --color-1-accent: #f90;
+    --color-2-accent: #88a;
+    --color-3-accent: #1e0;
+    --color-3-btn: #00ad00;
+    --color-text: white;
+}
+[data-theme="bad-vision"] {
+    --color-1: #fff;
+    --color-2: #fff;
+    --color-3: #fff;
+    --color-1-accent: #fff;
+    --color-2-accent: #fff;
+    --color-3-accent: #fff;
+    --color-3-btn: #fff;
+    --color-text: black;
+}
+[data-theme="bad-vision"] nav {
+    border: 2px solid black;
+    outline: 3px solid white;
+    padding: 1.5rem;
+}
 .bg-1 {
-    background-color: #FF8800;
+    color: var(--color-text)!important;
+    background-color: var(--color-1);
 }
 .bg-2 {
-    background-color: #666688;
+    color: var(--color-text)!important;
+    background-color: var(--color-2);
 }
 .bg-3 {
-    background-color: #66CC66;
+    color: var(--color-text)!important;
+    background-color: var(--color-3);
 }
 .btn-1 {
-    background-color: #FF8800;
-    color: white!important;
+    color: var(--color-text)!important;
+    background-color: var(--color-1);
 }
 .btn-1:hover {
-    background-color: #FF9900;
+    color: var(--color-text)!important;
+    background-color: var(--color-1-accent);
 }
 .btn-2 {
-    color: white!important;
+    color: var(--color-text)!important;
 }
 .btn-2:hover {
-    background-color: #8888AA;
+    color: var(--color-text)!important;
+    background-color: var(--color-2-accent);
 }
 .btn-3 {
-    background-color: #00ad00;
-    color: white!important;
+    color: var(--color-text)!important;
+    background-color: var(--color-3-btn);
+    color: var(--color-text)!important;
 }
 .btn-3:hover {
-    background-color: #11EE00;
+    color: var(--color-text)!important;
+    background-color: var(--color-3-accent);
 }
 .btn-outline-1 {
+    color: var(--color-text)!important;
     background-color: transparent;
     color: #FF8800;
     font-weight: bold;
-    border: 1px solid #FF8800;
+    border: 1px solid var(--color-1);
 }
 .btn-outline-1:hover {
-    background-color: #FF8800;
-    color: white;
-    border: 1px solid #FF8800;
+    background-color: var(--color-1);
+    color: var(--color-text)!important;
+    border: 1px solid var(--color-1);
 }
 .btn-outline-2 {
     background-color: transparent;
-    color: #666688;
+    color: var(--color-text)!important;
     font-weight: bold;
-    border: 1px solid #666688;
+    border: 1px solid var(--color-2);
 }
 .btn-outline-2:hover {
-    background-color: #666688;
-    color: white;
-    border: 1px solid #666688;
+    background-color: var(--color-2);
+    color: var(--color-text)!important;
+    border: 1px solid var(--color-2);
 }
 .btn-outline-3 {
     background-color: transparent;
-    color: #66CC66;
+    color: var(--color-text)!important;
     font-weight: bold;
-    border: 1px solid #66CC66;
+    border: 1px solid var(--color-3);
 }
 .btn-outline-3:hover {
-    background-color: #66CC66;
-    color: white;
-    border: 1px solid #66CC66;
+    background-color: var(--color-3);
+    color: var(--color-text)!important;
+    border: 1px solid var(--color-3);
 }
 .underlined-1 {
-    text-decoration: underline solid 5px #FF8800;
+    text-decoration: underline solid 5px var(--color-1);
 }
 .underlined-2 {
-    text-decoration: underline solid 5px #666688;
+    text-decoration: underline solid 5px var(--color-3);
 }
 .underlined-3 {
-    text-decoration: underline solid 5px #66CC66;
+    text-decoration: underline solid 5px var(--color-3);
+}
+[data-theme="bad-vision"].btn,
+[data-theme="bad-vision"] input,
+[data-theme="bad-vision"] textarea {
+    border: 1px solid black
 }

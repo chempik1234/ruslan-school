@@ -1,0 +1,21 @@
+[data-theme="bad-vision"] p,
+[data-theme="bad-vision"] a,
+[data-theme="bad-vision"] h6,
+[data-theme="bad-vision"] input,
+[data-theme="bad-vision"] textarea,
+[data-theme="bad-vision"] span,
+[data-theme="bad-vision"] button {
+    font-size: 1.7rem!important;
+}
+[data-theme="bad-vision"] h1,
+[data-theme="bad-vision"] h2 {
+    font-size: 2.5em!important;
+}
+[data-theme="bad-vision"] h3,
+[data-theme="bad-vision"] h4,
+[data-theme="bad-vision"] h5 {
+    font-size: 2em!important;
+}
+[data-theme="bad-vision"] .border, .card {
+    border: 2px solid black!important;
+}

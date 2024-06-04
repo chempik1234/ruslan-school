@@ -14,6 +14,7 @@
       <link rel="stylesheet" type="text/css" href="{%static 'css/pic.css'%}"/>
       <link rel="stylesheet" type="text/css" href="{%static 'css/common.css'%}"/>
       <link rel="stylesheet" type="text/css" href="{%static 'css/layouts.css'%}"/>
+      <link rel="stylesheet" type="text/css" href="{%static 'css/bad_vision.css'%}"/>
       <link rel="icon" type="image/png" href="{% static 'img/tab_icon.png' %}"/>
     <!--<link rel="stylesheet" type="text/css" href="{%static 'css/forms.css'%}"/>
     <link rel="stylesheet" type="text/css" href="{%static 'css/rating_bar.css'%}"/>
@@ -64,9 +65,6 @@
                     <h4>Сайт организации "{{company_name}}"</h4>
                 </a>
             </div>
-            <div class="col-1">
-                <a class="pic pic-eye">Версия для слабовидящих</a>
-            </div>
         </div>
       <nav class="navbar navbar-expand-md navbar-light navbar mx-auto bg-2 sticky-top" id="main-nav">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,6 +96,10 @@
       </nav>
     </header>
     <div class="bg-{% if bg_color %}{{bg_color}}{% else %}white{% endif %} py-3">
+        <div class="d-flex justify-content-end my-2">
+            <button id="toggle-vision" class="btn p-1 border-light rounded pic pic-eye">Версия для слабовидящих</button>
+            <script src="{% static 'js/bad_vision.js' %}"></script>
+        </div>
         <div class="container">
             {% if title_header != "" and title_header != None %}
             <div class="row justify-content-center">
@@ -129,8 +131,8 @@
                       {{ ticket_form.as_p }}
                       <input type="submit" class="btn btn-3"/>
                       <script>
-                          const feedbackEmailField = document.GetElementById('id_email');
-                          feedbackEmailField.value = '{user.email}}';
+                          const feedbackEmailField = document.getElementById('id_email');
+                          feedbackEmailField.value = '{{user.email}}';
                       </script>
                   </form>
               </div>
