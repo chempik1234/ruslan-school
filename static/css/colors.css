@@ -7,8 +7,20 @@
     --color-3-accent: #1e0;
     --color-3-btn: #00ad00;
     --color-text: white;
+    --color-border: black;
 }
-[data-theme="bad-vision"] {
+[data-theme="bad-vision"] .color-scheme-black {
+    --color-1: #000;
+    --color-2: #000;
+    --color-3: #000;
+    --color-1-accent: #000;
+    --color-2-accent: #000;
+    --color-3-accent: #000;
+    --color-3-btn: #000;
+    --color-text: white;
+    --color-border: white;
+}
+[data-theme="bad-vision"] .color-scheme-white {
     --color-1: #fff;
     --color-2: #fff;
     --color-3: #fff;
@@ -17,11 +29,59 @@
     --color-3-accent: #fff;
     --color-3-btn: #fff;
     --color-text: black;
+    --color-border: black;
 }
-[data-theme="bad-vision"] nav {
-    border: 2px solid black;
-    outline: 3px solid white;
+[data-theme="bad-vision"] .color-scheme-yellow {
+    --color-1: yellow;
+    --color-2: yellow;
+    --color-3: yellow;
+    --color-1-accent: yellow;
+    --color-2-accent: yellow;
+    --color-3-accent: yellow;
+    --color-3-btn: yellow;
+    --color-text: black;
+    --color-border: black;
+}
+[data-theme="bad-vision"] nav,
+[data-theme="bad-vision"] footer {
+    background-color: var(--color-1);
+    color: var(--color-text);
+    border: 2px solid var(--color-1);
+    outline: 3px solid var(--color-text);
     padding: 1.5rem;
+}
+[data-theme="bad-vision"] div {
+    background-color: var(--color-1);
+    color: var(--color-text);
+}
+[data-theme="bad-vision"] .text-dark,
+[data-theme="bad-vision"] .text-white,
+[data-theme="bad-vision"] .text-secondary,
+[data-theme="bad-vision"] .text-light,
+[data-theme="bad-vision"] h1,
+[data-theme="bad-vision"] h2,
+[data-theme="bad-vision"] h3,
+[data-theme="bad-vision"] h4,
+[data-theme="bad-vision"] h5,
+[data-theme="bad-vision"] a,
+[data-theme="bad-vision"] p,
+[data-theme="bad-vision"] button,
+[data-theme="bad-vision"] input,
+[data-theme="bad-vision"] textarea {
+    color: var(--color-text)!important;
+}
+.my-bg-yellow {
+    background-color: yellow!important;
+    --color-text: black;
+}
+.my-bg-black {
+    background-color: black!important;
+    --color-text: white;
+}
+.my-bg-white {
+    background-color: white!important;
+    color: black!important;
+    --color-text: black;
 }
 .bg-1 {
     color: var(--color-text)!important;
@@ -102,8 +162,8 @@
 .underlined-3 {
     text-decoration: underline solid 5px var(--color-3);
 }
-[data-theme="bad-vision"].btn,
+[data-theme="bad-vision"] .btn,
 [data-theme="bad-vision"] input,
 [data-theme="bad-vision"] textarea {
-    border: 1px solid black
+    border: 1px solid var(--color-border);
 }
