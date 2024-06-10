@@ -97,7 +97,7 @@
     </header>
     <div class="bg-{% if bg_color %}{{bg_color}}{% else %}white{% endif %} py-3">
         <div class="d-flex justify-content-end my-2 mx-0 row">
-            <div id="bad-vision-panel" class="col row mx-0 my-1 display-bad-vision">
+            <div id="bad-vision-panel" class="col-sm row mx-0 my-1 display-bad-vision">
                 <div class="col">
                     <p class="mb-0">Размер текста</p>
                     <div class="input-group">
@@ -114,16 +114,12 @@
                 </div>
                 <div class="col">
                     <p class="mb-0">Цвет</p>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="btn border my-bg-white" id="color-scheme-white" onclick="changeColorScheme(this.id)">Б</button>
-                        </div>
-                        <div>
-                            <button class="btn border my-bg-yellow" id="color-scheme-yellow" onclick="changeColorScheme(this.id)">Ж</button>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="btn border my-bg-black" id="color-scheme-black" onclick="changeColorScheme(this.id)">Ч</button>
-                        </div>
+                    <div class="d-inline-block">
+                        <button class="btn border my-bg-white" id="color-scheme-white" onclick="changeColorScheme(this.id)">Б</button>
+                        <button class="btn border my-bg-yellow" id="color-scheme-yellow" onclick="changeColorScheme(this.id)">Ж</button>
+                        <button class="btn border my-bg-black" id="color-scheme-black" onclick="changeColorScheme(this.id)">Ч</button>
+                        <button class="btn border my-bg-black2" id="color-scheme-black-2" onclick="changeColorScheme(this.id)">Ч</button>
+                        <button class="btn border my-bg-blue" id="color-scheme-blue" onclick="changeColorScheme(this.id)">С</button>
                     </div>
                 </div>
             </div>

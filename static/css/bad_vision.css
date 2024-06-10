@@ -4,42 +4,47 @@
 [data-theme="bad-vision"] body.text-size-100 input,
 [data-theme="bad-vision"] body.text-size-100 textarea,
 [data-theme="bad-vision"] body.text-size-100 span,
-[data-theme="bad-vision"] body.text-size-100 button,
-[data-theme="bad-vision"] body.text-size-100 h1,
-[data-theme="bad-vision"] body.text-size-100 h2,
-[data-theme="bad-vision"] body.text-size-100 h3,
-[data-theme="bad-vision"] body.text-size-100 h4,
-[data-theme="bad-vision"] body.text-size-100 h5{
+[data-theme="bad-vision"] body.text-size-100 button{
     font-size: 1em!important;
 }
+[data-theme="bad-vision"] body.text-size-100 h1 {font-size: 2.5rem!important;}
+[data-theme="bad-vision"] body.text-size-100 h2 {font-size: 2rem!important;}
+[data-theme="bad-vision"] body.text-size-100 h3 {font-size: 1.5rem!important;}
+[data-theme="bad-vision"] body.text-size-100 h4 {font-size: 1.25rem!important;}
+[data-theme="bad-vision"] body.text-size-100 h5 {font-size: 1em!important;}
+[data-theme="bad-vision"] body.text-size-100 h6 {font-size: 0.875em!important;}
+
 [data-theme="bad-vision"] body.text-size-150 p,
 [data-theme="bad-vision"] body.text-size-150 a,
 [data-theme="bad-vision"] body.text-size-150 h6,
 [data-theme="bad-vision"] body.text-size-150 input,
 [data-theme="bad-vision"] body.text-size-150 textarea,
 [data-theme="bad-vision"] body.text-size-150 span,
-[data-theme="bad-vision"] body.text-size-150 button,
-[data-theme="bad-vision"] body.text-size-150 h1,
-[data-theme="bad-vision"] body.text-size-150 h2,
-[data-theme="bad-vision"] body.text-size-150 h3,
-[data-theme="bad-vision"] body.text-size-150 h4,
-[data-theme="bad-vision"] body.text-size-150 h5{
+[data-theme="bad-vision"] body.text-size-150 button{
     font-size: 1.5em!important;
 }
+[data-theme="bad-vision"] body.text-size-150 h1 {font-size: 3.75rem!important;}
+[data-theme="bad-vision"] body.text-size-150 h2 {font-size: 3rem!important;}
+[data-theme="bad-vision"] body.text-size-150 h3 {font-size: 2.25rem!important;}
+[data-theme="bad-vision"] body.text-size-150 h4 {font-size: 1.875rem!important;}
+[data-theme="bad-vision"] body.text-size-150 h5 {font-size: 1.5em!important;}
+[data-theme="bad-vision"] body.text-size-150 h6 {font-size: 1.3125em!important;}
+
 [data-theme="bad-vision"] body.text-size-200 p,
 [data-theme="bad-vision"] body.text-size-200 a,
 [data-theme="bad-vision"] body.text-size-200 h6,
 [data-theme="bad-vision"] body.text-size-200 input,
 [data-theme="bad-vision"] body.text-size-200 textarea,
 [data-theme="bad-vision"] body.text-size-200 span,
-[data-theme="bad-vision"] body.text-size-200 button,
-[data-theme="bad-vision"] body.text-size-200 h1,
-[data-theme="bad-vision"] body.text-size-200 h2,
-[data-theme="bad-vision"] body.text-size-200 h3,
-[data-theme="bad-vision"] body.text-size-200 h4,
-[data-theme="bad-vision"] body.text-size-200 h5{
+[data-theme="bad-vision"] body.text-size-200 button{
     font-size: 2em!important;
 }
+[data-theme="bad-vision"] body.text-size-200 h1 {font-size: 5rem!important;}
+[data-theme="bad-vision"] body.text-size-200 h2 {font-size: 4rem!important;}
+[data-theme="bad-vision"] body.text-size-200 h3 {font-size: 3rem!important;}
+[data-theme="bad-vision"] body.text-size-200 h4 {font-size: 2.5rem!important;}
+[data-theme="bad-vision"] body.text-size-200 h5 {font-size: 2em!important;}
+[data-theme="bad-vision"] body.text-size-200 h6 {font-size: 1.75em!important;}
 [data-theme="light"] .display-bad-vision {
     display: none;
 }

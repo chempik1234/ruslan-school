@@ -20,6 +20,17 @@
     --color-text: white;
     --color-border: white;
 }
+[data-theme="bad-vision"] .color-scheme-black-2 {
+    --color-1: #000;
+    --color-2: #000;
+    --color-3: #000;
+    --color-1-accent: #000;
+    --color-2-accent: #000;
+    --color-3-accent: #000;
+    --color-3-btn: #000;
+    --color-text: lightgreen;
+    --color-border: lightgreen;
+}
 [data-theme="bad-vision"] .color-scheme-white {
     --color-1: #fff;
     --color-2: #fff;
@@ -41,6 +52,17 @@
     --color-3-btn: yellow;
     --color-text: black;
     --color-border: black;
+}
+[data-theme="bad-vision"] .color-scheme-blue {
+    --color-1: dodgerblue;
+    --color-2: dodgerblue;
+    --color-3: dodgerblue;
+    --color-1-accent: dodgerblue;
+    --color-2-accent: dodgerblue;
+    --color-3-accent: dodgerblue;
+    --color-3-btn: dodgerblue;
+    --color-text: darkblue;
+    --color-border: darkblue;
 }
 [data-theme="bad-vision"] nav,
 [data-theme="bad-vision"] footer {
@@ -77,6 +99,14 @@
 .my-bg-black {
     background-color: black!important;
     --color-text: white;
+}
+.my-bg-black2 {
+    background-color: black!important;
+    --color-text: lightgreen;
+}
+.my-bg-blue {
+    background-color: dodgerblue!important;
+    --color-text: darkblue;
 }
 .my-bg-white {
     background-color: white!important;

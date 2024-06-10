@@ -13,7 +13,7 @@
         <img src="{{content.image.url}}" class="content-image"/>
         {% endif %}
         {% if content.file %}
-        <a class="pic pic-download" href="{{content.file.url}}">СКАЧАТЬ: {{content.file.name}} {{content.file_size}}</a>
+        <a class="pic pic-download text-break" href="{{content.file.url}}">СКАЧАТЬ: {{content.file.name}} {{content.file_size}}</a>
         {% endif %}
         {% endfor %}
     </div>
