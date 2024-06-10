@@ -12,3 +12,13 @@ toggleButton.addEventListener('click', () => {
     body.classList.add('bad-vision');
   }
 });
+
+
+var currentTextSizeClass = "";
+function changeTextSize(sizeClass) {
+    if (currentTextSizeClass != ""){
+        body.classList.remove(currentTextSizeClass);
+    }
+    body.classList.add(sizeClass);
+    currentTextSizeClass = sizeClass;
+}
